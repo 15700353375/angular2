@@ -39,13 +39,12 @@ module.exports = {
                 exclude: /node_modules/
             }, 
             {
-               test: /\.css$/,
-               include: helpers.root('src', 'app'),
-               use: ['css-loader','postcss-loader']
-             },
+                test: /\.css$/,
+                use: ['to-string-loader', 'css-loader', 'postcss-loader']
+            }, 
             {
-                test: /\.less$/,
-                use: ['css-loader', 'postcss-loader', 'less-loader']
+                test: /\.scss$/,
+                use: ['to-string-loader', 'css-loader', 'postcss-loader', 'sass-loader']
             },
             {
               test: /\.(png|jpg|jpeg|gif|eot|ttf|woff|woff2|svg|svgz)(\?.+)?$/,
@@ -67,18 +66,22 @@ module.exports = {
    plugins: [
 
        // 解决 core.es5
-      // new webpack.ContextReplacementPlugin(
-      //     /angular(\\|\/)core(\\|\/)@angular/,/angular(\\|\/)core(\\|\/)(esm(\\|\/)src|src)(\\|\/)linker/,
-      //     helpers.root('../src'), 
-      //     {} 
-      // ),
-      // Workaround for angular/angular#11580
       new webpack.ContextReplacementPlugin(
-        // The (\\|\/) piece accounts for path separators in *nix and Windows
-        /angular(\\|\/)core(\\|\/)@angular/,
-        helpers.root('./src'), // location of your src
-        {} // a map of your routes
+          /angular(\\|\/)core(\\|\/)@angular/,/angular(\\|\/)core(\\|\/)(esm(\\|\/)src|src)(\\|\/)linker/,
+          helpers.root('../src'), 
+          {} 
       ),
+      // new webpack.ContextReplacementPlugin(
+      //             /angular(\\|\/)core(\\|\/)(esm(\\|\/)src|src)(\\|\/)linker/,
+      //             path.resolve(__dirname, 'doesnotexist/')
+      //         ),
+      // Workaround for angular/angular#11580
+      // new webpack.ContextReplacementPlugin(
+      //   // The (\\|\/) piece accounts for path separators in *nix and Windows
+      //   /angular(\\|\/)core(\\|\/)@angular/,
+      //   helpers.root('./src'), // location of your src
+      //   {} // a map of your routes
+      // ),
 
       // 将三个模块的插件合理放进来，有共享依赖时，就把它们从app中移除
       new webpack.optimize.CommonsChunkPlugin({
