@@ -1,7 +1,10 @@
 
 
 <h3>Top Heroes</h3>
-<div class="grid grid-pad">
+<!-- <p [appLoading]="yellow">Highlight me!</p>
+
+<p [appLoading]="blue"> Highlight me too!</p> -->
+<div class="grid grid-pad" [appLoading]="heroes.length > 1 ? true : false">
     <div *ngFor="let hero of heroes" [routerLink]="['/detail', hero.id]" class="col-1-4">
         <div class="module hero">
             <h4>{{hero.name}}</h4>

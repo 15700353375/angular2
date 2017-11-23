@@ -24,7 +24,7 @@ export class HeroService {
   getHeroesSlowly(): Promise<Hero[]> {
     return new Promise(resolve => {
       // Simulate server latency with 2 second delay
-      setTimeout(() => resolve(this.getHeroes()), 2000);
+      setTimeout(() => resolve(this.getHeroes()), 4000);
     });
   }
   // 添加一个根据id获取英雄的方法

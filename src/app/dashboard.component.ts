@@ -18,7 +18,7 @@ export class DashboardComponent {
     constructor(private heroService: HeroService) { };
     
     getHeroes(): void {
-        this.heroService.getHeroes().then(heroes => this.heroes = heroes.slice(1, 5));
+        this.heroService.getHeroesSlowly().then(heroes => this.heroes = heroes.slice(1, 5));
     }
 
     ngOnInit(): void {

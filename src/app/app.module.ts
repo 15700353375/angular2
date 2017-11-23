@@ -16,6 +16,10 @@ import { HeroDetailComponent }  from './hero/hero-detail.component';
 // 路由
 import { AppRoutingModule }     from './app-routing.module';
 
+
+// 指令注入
+import { LoadingDirective }     from '../directive/loading.directive';
+
 @NgModule({
   imports: [
     BrowserModule,
@@ -28,7 +32,8 @@ import { AppRoutingModule }     from './app-routing.module';
     AppComponent,
     HeroesComponent,
     DashboardComponent,
-    HeroDetailComponent
+    HeroDetailComponent,
+    LoadingDirective
   ],
   bootstrap: [ AppComponent ]
 })
