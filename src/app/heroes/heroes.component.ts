@@ -4,14 +4,14 @@ import { Component } from '@angular/core';
 // 路由注入
 import { Router } from '@angular/router';
 // 现在，有两个组件需要Hero类的引用，所以
-import { Hero } from './hero/hero';
+import { Hero } from '../common/hero/hero';
 // 导入服务
-import { HeroService } from '../service/hero.service';
+import { HeroService } from '../../service/hero.service';
  
 @Component({
   selector: 'my-heroes',
   templateUrl: './heroes.component.html',
-  styleUrls: ['./app.component.css'],
+  styleUrls: ['../app.component.css'],
   // 注册一个HeroService新实例
   providers: [HeroService]
 })

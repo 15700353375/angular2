@@ -10,9 +10,10 @@ import { FormsModule }   from '@angular/forms'; // <-- NgModel lives here
 import { RouterModule }   from '@angular/router';
  
 import { AppComponent }  from './app.component';
-import { HeroesComponent }  from './heroes.component';
-import { DashboardComponent }  from './dashboard.component';
-import { HeroDetailComponent }  from './hero/hero-detail.component';
+
+import { HeroesComponent }  from './heroes/heroes.component';
+import { DashboardComponent }  from './heroes/dashboard.component';
+import { HeroDetailComponent }  from './common/hero/hero-detail.component';
 // 路由
 import { AppRoutingModule }     from './app-routing.module';
 

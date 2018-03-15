@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 // 现在，有两个组件需要Hero类的引用，所以
-import { Hero } from './hero/hero';
+import { Hero } from '../common/hero/hero';
 // 导入服务
-import { HeroService } from '../service/hero.service';
+import { HeroService } from '../../service/hero.service';
 
 @Component({
     selector: 'my-dashboard',

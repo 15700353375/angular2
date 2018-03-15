@@ -7,7 +7,7 @@ import 'rxjs/add/operator/switchMap';
 // 引入公共类
 import { Hero } from './hero';
 
-import { HeroService } from '../../service/hero.service';
+import { HeroService } from '../../../service/hero.service';
  // 创建一个Hero类
 
 @Component({

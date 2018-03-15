@@ -1,4 +1,4 @@
-import { TemplatesListComponent } from './../../../../ngAdmin/src/app/pages/enterprise-apply/apply-approval/modal/templates-list.component';
+// import { TemplatesListComponent } from './../../../../ngAdmin/src/app/pages/enterprise-apply/apply-approval/modal/templates-list.component';
 import { Directive, ElementRef, HostListener, Input, DoCheck } from '@angular/core';
 
 @Directive({
