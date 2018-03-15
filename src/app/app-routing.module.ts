@@ -20,7 +20,7 @@ const routes: Routes = [
 
 @NgModule({
     imports: [ RouterModule.forRoot(routes, {
-      // 启停hash模式
+      // 启停hash模式 
       useHash: true
   })],
     exports: [ RouterModule ]
