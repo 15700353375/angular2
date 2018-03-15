@@ -11,29 +11,39 @@ import { RouterModule }   from '@angular/router';
  
 import { AppComponent }  from './app.component';
 
-import { HeroesComponent }  from './heroes/heroes.component';
-import { DashboardComponent }  from './heroes/dashboard.component';
-import { HeroDetailComponent }  from './common/hero/hero-detail.component';
+import { HeroesComponent }  from './pages/heroes/heroes.component';
+import { DashboardComponent }  from './pages/dashboard/dashboard.component';
+// import { HeroDetailComponent }  from './common/hero/hero-detail.component';
 // 路由
-import { AppRoutingModule }     from './app-routing.module';
+import { AppRoutingModule } from './app-routing.module';
 
 
 // 指令注入
 import { LoadingDirective }     from '../directive/loading.directive';
+
+
+
+// module
+import { NavModule } from './common/nav/nav.module';
+import { TestComponent } from './pages/test/test.component';
+import { HeroDetailModule } from './common/hero/hero-detail.module';
 
 @NgModule({
   imports: [
     BrowserModule,
     FormsModule,
     // 路由配置
-    AppRoutingModule
+    AppRoutingModule,
+    HeroDetailModule,
+    NavModule
   ],
   // 组件在使用之前必须在此声明
   declarations: [
     AppComponent,
     HeroesComponent,
     DashboardComponent,
-    HeroDetailComponent,
+    // HeroDetailComponent,
+    TestComponent,
     LoadingDirective
   ],
   bootstrap: [ AppComponent ]

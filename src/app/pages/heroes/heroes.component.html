@@ -1,7 +1,7 @@
 
 
 <!-- <h2>My Heroes</h2> -->
-<ul class="heroes" [appLoading]="heroes ? true : false">
+<ul class="heroes">
   <li *ngFor="let hero of heroes" 
       [class.selected]="hero === selectedHero"
       (click)="onSelect(hero)">
@@ -10,12 +10,14 @@
 </ul>
 
 
-<div *ngIf="selectedHero" [appLoading]="selectedHero ? true : false">
+<div class="hero-item" *ngIf="selectedHero">
   <h2>
     {{selectedHero.name | uppercase}} is my hero
   </h2>
   <button (click)="gotoDetail()">View Details</button>
 </div>
 
+<!-- 路由 -->
+<router-outlet></router-outlet>
 
 

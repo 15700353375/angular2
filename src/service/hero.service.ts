@@ -2,7 +2,7 @@
 
 import { Injectable } from '@angular/core';
 
-import { Hero } from '../app/hero/hero';
+import { Hero } from '../app/common/hero/hero';
 
 // 引入数据
 import { HEROES } from '../mock/mock-heroes';

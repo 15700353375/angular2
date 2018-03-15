@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 // 现在，有两个组件需要Hero类的引用，所以
-import { Hero } from '../common/hero/hero';
+import { Hero } from '../../common/hero/hero';
 // 导入服务
-import { HeroService } from '../../service/hero.service';
+import { HeroService } from '../../../service/hero.service';
+
 
 @Component({
     selector: 'my-dashboard',
@@ -18,7 +19,7 @@ export class DashboardComponent {
     constructor(private heroService: HeroService) { };
     
     getHeroes(): void {
-        this.heroService.getHeroesSlowly().then(heroes => this.heroes = heroes.slice(1, 5));
+        this.heroService.getHeroes().then(heroes => this.heroes = heroes.slice(1, 5));
     }
 
     ngOnInit(): void {
