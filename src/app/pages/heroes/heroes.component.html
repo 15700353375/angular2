@@ -10,14 +10,12 @@
 </ul>
 
 
-<div class="hero-item" *ngIf="selectedHero">
+<div class="hero-item" *ngIf="selectedHero && !isShow_hero">
   <h2>
     {{selectedHero.name | uppercase}} is my hero
   </h2>
   <button (click)="gotoDetail()">View Details</button>
 </div>
 
-<!-- 路由 -->
-<router-outlet></router-outlet>
-
+<hero-detail *ngIf='isShow_hero' [heroItem]='heroId'></hero-detail>
 

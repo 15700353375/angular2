@@ -8,7 +8,7 @@ import { HeroService } from '../../../service/hero.service';
 @Component({
     selector: 'my-dashboard',
     templateUrl: './dashboard.component.html',
-    styleUrls: ['./dashboard.component.css'],
+    styleUrls: ['./dashboard.component.scss'],
     // 注册一个HeroService新实例
     providers: [HeroService]
 })

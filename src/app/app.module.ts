@@ -5,7 +5,7 @@
 import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule }   from '@angular/forms'; // <-- NgModel lives here
-
+import { CommonModule } from '@angular/common';
 // 路由注入
 import { RouterModule }   from '@angular/router';
  
@@ -15,7 +15,7 @@ import { HeroesComponent }  from './pages/heroes/heroes.component';
 import { DashboardComponent }  from './pages/dashboard/dashboard.component';
 // import { HeroDetailComponent }  from './common/hero/hero-detail.component';
 // 路由
-import { AppRoutingModule } from './app-routing.module';
+import { AppRoutingModule } from './app-routing';
 
 
 // 指令注入
@@ -32,6 +32,7 @@ import { HeroDetailModule } from './common/hero/hero-detail.module';
   imports: [
     BrowserModule,
     FormsModule,
+    CommonModule,
     // 路由配置
     AppRoutingModule,
     HeroDetailModule,

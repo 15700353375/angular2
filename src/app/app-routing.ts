@@ -19,14 +19,11 @@ const routes: Routes = [
   { path: 'detail/:id', component: HeroDetailComponent },
   { path: 'heroes', component: HeroesComponent },
   { path: 'test', component: TestComponent },
-  // { path: 'heroes', loadChildren: 'app/pages/heroes/heroes.module#HeroesModule' },
+//   { path: 'heroes', loadChildren: './pages/heroes/heroes.module#HeroesModule' },
 ];
 
-@NgModule({
-    imports: [ RouterModule.forRoot(routes, {
-      // 启停hash模式 
-      useHash: true
-  })],
-    exports: [ RouterModule ]
-  })
-export class AppRoutingModule {}
+export let AppRoutingModule = RouterModule.forRoot(routes, {
+    // 启停hash模式
+    useHash: true
+});
+

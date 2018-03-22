@@ -38,21 +38,29 @@ export class HeroesComponent {
     private heroService: HeroService) { };
 
   ngOnInit(): void {
+    
     this.getHeroes();
   }
 
   // 获取英雄列表
   getHeroes(): void {
+    
     this.heroService.getHeroes().then(heroes => this.heroes = heroes);
   }
 
   // 点击列表-进入详情
   onSelect(hero: Hero): void {
+    this.isShow_hero = false;
     this.selectedHero = hero;
   }
+  isShow_hero: boolean = false;
+  heroId:any;
 
   gotoDetail(): void {
-    this.router.navigate(['/detail', this.selectedHero.id]);
+    this.isShow_hero = true;
+    this.heroId = this.selectedHero.id;
+    console.log(this.heroId)
+    // this.router.navigate(['/detail', this.selectedHero.id]);
   }
 
 }
